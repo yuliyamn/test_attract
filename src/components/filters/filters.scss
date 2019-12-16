@@ -1,0 +1,134 @@
+.filters {
+  width: 240px;
+  float: left;
+  margin-right: 15px;
+  padding-right: 30px;
+
+  @media screen and (max-width: 700px) {
+    width: 100%;
+  }
+}
+
+.filter-item {
+  margin-bottom: 60px;
+}
+
+.filter__title {
+  display: inline-block;
+  text-transform: uppercase;
+  color: #33363e;
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.filter-list__item {
+  margin-bottom: 18px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+input[type=checkbox].filter-checkbox {
+  position: absolute;
+  z-index: -1000;
+  left: -1000px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+input[type=checkbox].filter-checkbox + .filter-label {
+  padding-left: 23px;
+  height: 18px;
+  display: inline-block;
+  line-height: 18px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  font-size: 15px;
+  vertical-align: middle;
+  cursor: pointer;
+
+}
+
+input[type=checkbox].filter-checkbox:checked + .filter-label {
+  background-position: 0 -18px;
+}
+
+.filter-label {
+  background-image: url(./assets/checkbox.png);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.filter-label__count {
+  color: #a6a9af;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+.filter-select {
+  border: 1px solid #dee0e1;
+  width: 100%;
+  overflow: hidden;
+  background: url(./assets/arrow_down.png) no-repeat right center;
+  height: 40px;
+
+
+  & select{
+    border: 0;
+    outline: none;
+    background: transparent;
+    border: none;
+    padding: 5px;
+    font-size: 16px;
+    height: 40px;
+    width: calc(100% + 20px);
+  }
+}
+
+.filter-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.filter-button {
+  color: #fff;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  width: 100px;
+  height: 35px;
+  line-height: 1;
+  background: #1cb8ff;
+  transition: all 0.3s;
+
+  &:hover {
+    background: darken(#1cb8ff, 10%);
+  }
+}
+
+.vue-slider-component .vue-slider-process {
+  background: #1cb8ff;
+}
+
+.vue-slider-component .vue-slider-dot {
+  width: 15px;
+  height: 15px;
+  border: 1px solid #1cb8ff;
+}
+
+.vue-slider-component .vue-slider {
+  border-radius: 0;
+}

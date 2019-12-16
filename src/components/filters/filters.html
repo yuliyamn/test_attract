@@ -1,0 +1,39 @@
+<div class="filters">
+  <div class="filter-item">
+    <label class="filter__title">City</label>
+    <div class="filter-select">
+      <select v-model="citySelected">
+        <option value="0">All cities</option>
+        <option :selected="citySelected" v-for="item in city" v-html="item.name" v-bind:value="item.id"></option>
+      </select>
+    </div>
+  </div>
+
+  <div class="filter-item">
+    <label class="filter__title">Categories</label>
+    <ul class="filter-list">
+      <li v-for="item in category" class="filter-list__item">
+        <input type="checkbox" :name="item.id" v-model="categoriesSelected"
+               :id="item.id" :value="item.id" class="filter-checkbox">
+        <label :for="item.id" class="filter-label">
+          {{item.name}}
+          <span class="filter-label__count">({{categoryCount[item.id]}})</span>
+        </label>
+      </li>
+    </ul>
+  </div>
+
+  <div class="filter-item">
+    <label class="filter__title">Price</label>
+    <div>
+      <vue-slider v-model="priceValue" :min="0" :max="maxPrice" ref="priceSlider">
+        <div class="diy-tooltip" slot="tooltip" slot-scope="{ priceValue }">
+        </div>
+      </vue-slider>
+      <div class="filter-bottom">
+        <span class="filter-price-total">{{'$'+priceValue[0]+ '&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;'+ '$'+priceValue[1]}}</span>
+        <button class="filter-button" @click.prevent="pushData()">FILTER</button>
+      </div>
+    </div>
+  </div>
+</div>

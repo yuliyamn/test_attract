@@ -1,0 +1,15 @@
+<div class="preview">
+  <div class="preview-item" v-for="item in filteredData">
+    <div class="preview__img">
+      <img src="/../static/images/img-1.jpg" alt=""/>
+      <p class="preview__city" v-html="city[item.city-1].name"></p>
+    </div>
+    <div class="preview-info">
+      <p class="preview__title" v-html="item.name"></p>
+      <div class="preview-bottom">
+        <p class="preview__category" v-html="category[item.category-1].name"></p>
+        <p class="preview__price" v-html="'$'+item.price"></p>
+      </div>
+    </div>
+  </div>
+</div>
